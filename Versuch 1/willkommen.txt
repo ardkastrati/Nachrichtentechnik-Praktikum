@@ -1,0 +1,9 @@
+Herzlich Willkommen!
+
+Wenn Sie diese Datei lesen können, haben Sie das Repository des
+Praktikum Nachrichtentechnik erfolgreich geklont.
+
+Viel Spaß beim Gitten!
+
+Gruß
+Ihre Praktikumsassistenten
