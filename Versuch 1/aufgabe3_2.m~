@@ -1,0 +1,8 @@
+function [ vec_up ] = aufgabe3_2( vec )
+%UNTITLED5 Summary of this function goes here
+%   Detailed explanation goes here
+vec_up=repmat(vec,5,1)
+reshape(repmat(vec,5,1))
+
+end
+
