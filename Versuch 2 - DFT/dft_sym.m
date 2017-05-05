@@ -22,7 +22,7 @@ clc
 
 %%% EDIT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 % Folge
-x = [0 0 0 1 0 0 0 0]; % Vervollstaendigen Sie diese Folge!
+x = [0 0 0 1 0 -1 0 0]; % Vervollstaendigen Sie diese Folge!
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Diskrete Fourier Transformation

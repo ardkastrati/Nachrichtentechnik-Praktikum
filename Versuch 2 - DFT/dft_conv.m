@@ -30,25 +30,27 @@ x1 = [1 1 1 1 1];
 y1 = [1 2 3 4 5];
 
 % Direkte Faltung im Zeitbereich (Befehl "conv" benutzen!)
-c1 = 
+c1 = conv(x1,y1);
 
 
 %%% mit Faltungtheorem (schnelle Faltung) %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Faltung im Zeitbereich -> Multiplikation im Frequenzbereich
 
 % Minimale Verlaengerung der Folgen fuer Faltungstheorem ( L1+L2-1 )
-x2 = 
-y2 = 
+x2 = x1;
+x2(8) = 0;
+y2 = y1;
+y2(8) = 0;
 
 % Diskrete Fourier Transformation
-X2 = 
-Y2 = 
+X2 = fft(x2);
+Y2 = fft(y2);
 
 % Multiplikation im Frequenzberech
-C2 = 
+C2 = X2.*Y2;
 
 % Ruecktransformation
-c2 = 
+c2 = ifft(C2);
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
