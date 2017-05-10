@@ -3,7 +3,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %   Nachrichtentechnisches Praktikum - Aufgabe 3 - Abtasttheorem
 %
-%   leakage: Ein abgetastetes sinusförmiges Signal wird und im Zeit- und
+%   leakage: Ein abgetastetes sinusfï¿½rmiges Signal wird und im Zeit- und
 %   Frequenzbereich untersucht
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -17,9 +17,9 @@ clc
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %Abtastrate
-f_a=5;
+f_a=8/7;
 
-%Länge der Diskreten Fouriertransformation
+%Lï¿½nge der Diskreten Fouriertransformation
 N_0=16;
 
 %simulierte Zeitdauer
@@ -58,7 +58,7 @@ signal_cont=source(signal_mode,f_ueber,T,f0,T_ein,T_aus);
 % Diskretes Spektrum des abgetasteten Signals
 [f_disc,freq_disc]=spectrum(signal,f_a,fg,T*f_a+1);
 
-% Kontinuierliches Spektrum des abgetasteten Signals
+% "Kontinuierliches" Spektrum des abgetasteten Signals
 [f_cont,freq_cont]=spectrum(signal,f_a,fg,N);
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

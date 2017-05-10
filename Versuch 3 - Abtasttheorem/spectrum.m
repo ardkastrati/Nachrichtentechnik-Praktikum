@@ -2,9 +2,9 @@
 %   Nachrichtentechnisches Praktikum - Aufgabe 3 - Abtasttheorem
 %
 %   spectrum berechnet den Betrag der Diskreten Fouriertransformation.
-%   Durch Zero-Padding wird die Auflösung erhöht.
+%   Durch Zero-Padding wird die Auflï¿½sung erhï¿½ht.
 %
-%   Übergebene Parameter:
+%   ï¿½bergebene Parameter:
 %       signal      : Signal im Zeitbereich
 %       f_a         : Abtastrate
 %       fg          : Hoechste dargestellte Frequenz

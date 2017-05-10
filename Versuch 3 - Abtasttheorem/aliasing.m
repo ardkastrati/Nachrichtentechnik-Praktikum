@@ -17,19 +17,19 @@ clc
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %Vektor der Abtastraten
-f_a=[4];%Hz - bitte vervollstaendigen Sie diesen Vektor!
+f_a=[0.5 1 33];%[4 2 1 0.5];%Hz - bitte vervollstaendigen Sie diesen Vektor!;
 
 %simulierte Zeitdauer
-T=20;%seconds
+T=25;%seconds (20)
 
 % Signalmodus
-signal_mode=1;
+signal_mode=4;%(1)
 
 % Frequenz der Si-, Sinus- und Cosinus-Funktion
 f0=1/3;%Hz
 
 % Einschaltzeitpunkt des Signals
-T_ein=0;%seconds
+T_ein=5;%seconds (0)
 
 % Ausschaltzeitpunkt des Signals
 T_aus=20;%seconds
@@ -76,15 +76,18 @@ for l=1:length(f_a)
     end
 end
 
+percentage = zeros(length(f_a));
 %Darstellen der rekonstruierten Signale
 for l=1:length(f_a)    
     t=(0:N-1)/N*T;
     plot(t,recon{l},colors(mod(l,length(colors))));
+    percentage(l) = (max(recon{l})-1);
     hold on;
 end
 
-%error= % Bitte vervollstaendigen Sie!
-%plot(t,error,'k','LineWidth',2);
+% t=(0:N-1)/N*T;
+% error = recon{1}-sinc(2*f0*(t-10));
+% plot(t,error,'k','LineWidth',2);
 
 grid on;
 xlabel('Zeit in s');
@@ -101,6 +104,7 @@ figure('Name','Frequenzbereich');
 %Darstellen der rekonstruierten Signale
 for l=1:length(f_a)
     plot(f{l},signal_frequency{l},colors(mod(l,length(colors))));
+%     (max(signal_frequency{l})-6)/6;
     hold on;
 end
 
