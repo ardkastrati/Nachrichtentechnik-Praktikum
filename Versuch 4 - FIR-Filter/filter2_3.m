@@ -9,7 +9,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 clear all;
-close all;
+% close all;
 clc;
 
 %% Parameter
@@ -17,7 +17,7 @@ clc;
 % Filter ------------------------------------
 n = 32;         % Filterlaenge
 filt_amp = 1;   % Filterverstaerkung
-beta = [3 5 8]; % Parameter beta des Kaiser-Fensters
+beta = [3 5 8]; % Parameter beta des Kaiser-Fensters 
 
 %% Berechnungen
 

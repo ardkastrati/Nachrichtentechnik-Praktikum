@@ -14,8 +14,8 @@ clc;
 %% Parameter
 
 % Filter
-Wn = NaN;       % Breite des Durchlassbereichs (in Radiant);
-Omega_T = NaN;   % Parameter zur Filtertransformation (Mittenfrequenz in Radiant)
+Wn =  0.3*2*pi  %;2*pi/8;     % Breite des Durchlassbereichs (in Radiant);
+Omega_T =3.6; %2*pi/4;; %pi; %   % Parameter zur Filtertransformation (Mittenfrequenz in Radiant)
 n = 31;             % Filterlänge
 filt_amp = 1;       % Filterverstärkung
 

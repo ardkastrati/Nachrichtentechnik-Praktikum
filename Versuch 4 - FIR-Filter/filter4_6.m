@@ -9,7 +9,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 clear all;
-close all;
+% close all;
 clc;
 
 %% Parameter
@@ -35,7 +35,7 @@ Wn_k = 0.5;      % Grenzfrequenz (in Vielfachen von fa/2)
 L = 2;           % Interpolationsfaktor
 
 % Interpolations-Filter -----------------------------------
-N_i = 11;        % Filterlaenge
+N_i = 21;   %11     % Filterlaenge
 A_i = 2;         % Filterverstärkung
 beta_i = 5;      % Parameter beta des Kaiser-Fensters
 Wn_i = 0.5;      % Grenzfrequenz (in Vielfachen von fa/2)
