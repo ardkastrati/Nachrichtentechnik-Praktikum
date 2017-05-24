@@ -5,8 +5,8 @@ clear;
 clc
 
 %% Parameter
-show_akf = false;
-activate_shift_register = false;
+show_akf = true;
+activate_shift_register = true;
 
 
 %% Zufallszahlen

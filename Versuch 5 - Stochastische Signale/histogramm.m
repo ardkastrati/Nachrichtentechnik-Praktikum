@@ -3,7 +3,7 @@
 %% Parameter
 
 % Anzahl der Elemente
-N = 1e6;
+N = 5000;
 % Anzahl der Klassen
 nbins = 50;
 

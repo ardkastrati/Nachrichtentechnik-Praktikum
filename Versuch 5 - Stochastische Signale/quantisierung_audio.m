@@ -10,7 +10,7 @@ clc
 % source = 1: Sinusschwingung bei f = 440 Hz (Kammerton A)
 % source = 2: Audiosignal
 % source = 3: wei�es gleichverteiltes Rauschen
-source = 3;
+source = 1;
 
 T = 5; % Zeitdauer T des ausgegebenen Audiosignals in Sekunden
 
@@ -34,7 +34,7 @@ y = y/max(abs(y));
 
 
 %% Quantisierung
-B = 16; % Anzahl der Quantisierungsbits
+B =2; % Anzahl der Quantisierungsbits
 
 y_quant = quantisation(y,B);
 
