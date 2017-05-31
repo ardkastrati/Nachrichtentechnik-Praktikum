@@ -22,9 +22,10 @@ bar(x,p)
 set(gca,'XTick',[1:33])
 set(gca,'XTickLabel',{'A';'B';'C';'D';'E';'F';'G';'H';'I';'J';'K';'L';'M';'N';'O';'P';'Q';'R';'S';'T';'U';'V';'W';'X';'Y';'Z';' ';'.';',';'?';'!';';';'-'})
 p_alt=p;
+
 % Entschlüsselung
 
-S_alt=''; % Lösungsschlüssel hier eintragen
+S_alt='.SZGITCJDBUNQYROE- LHKMXP!F?XVW,;'; % Lösungsschlüssel hier eintragen
 S_neu='ABCDEFGHIJKLMNOPQRSTUVWXYZ .,?!;-';
 for k=1:length(text)
     for l=1:length(S_alt)
