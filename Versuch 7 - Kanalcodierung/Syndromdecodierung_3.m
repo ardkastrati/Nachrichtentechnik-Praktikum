@@ -19,10 +19,10 @@
 
 %Abbruch der Simulation nach
 % - Anzahl der simulierten Bits
-Anzahl = ;      %Durch den Studenten anzupassen
+Anzahl = 500000;      %Durch den Studenten anzupassen
 
 %Signal-zu-Rausch-Verhaeltnis
-SNR = [Startwert:Inkrement:Endwert];        %Durch den Studenten anzupassen
+SNR = [3:1:9];        %Durch den Studenten anzupassen
 
 %Länge Infowort
 k= 4;
@@ -69,7 +69,7 @@ codedBitsNRZ = sign(codedBits - 0.5);
 H4 = [G4(:,(k+1):n)' diag(ones(1, (n-k)))];
 
 %Simulationsschleife
-
+tic;
 for j=1:length(SNR) 
     %Erzeuge Empfangsbits nach AWGN-Kanal
     noisedBitsCoded = awgn(codedBitsNRZ, SNR(j),'measured');
@@ -111,7 +111,7 @@ for j=1:length(SNR)
     %BER = (Anzahl fehlerhafte Bits)/(Anzahl gesendete Bits)
     BER_Coded(j) = sumErrorsCoded / Anzahl;
 end
-
+toc
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Ausgabe der BER-Kennlinien

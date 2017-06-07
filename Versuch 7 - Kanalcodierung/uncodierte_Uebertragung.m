@@ -22,8 +22,8 @@ Anzahl = [100,1000,100000];
 
 % - Anzahl der aufgetretenen Fehler
 % - Fehlerzahl = -1 --> Berechnung fuer feste Fehlerzahl deaktiviert
-%Fehlerzahl = [10,100,1000];
-Fehlerzahl = -1;
+Fehlerzahl = [10,100,1000];
+%Fehlerzahl = -1;
 
 %Signal-zu-Rausch-Verhaeltnis
 SNR = [-5:1:6];
@@ -49,6 +49,7 @@ sourceBits = sign(sourceBitsInt - 0.5);
 
 %Simulationsschleife Feste Bitanzahl
 
+Pb = qfunc(sqrt(10.^(SNR/10)));
 if (Anzahl ~= -1)
     for i=1:length(Anzahl)  
         for j=1:length(SNR) 
@@ -64,6 +65,7 @@ if (Anzahl ~= -1)
 
             %BER = (Anzahl fehlerhafte Bits)/(Anzahl gesendete Bits)
             BER_Anz(i,j) = sumErrors/Anzahl(i);
+            
 
         end
     end
@@ -94,18 +96,21 @@ if (Fehlerzahl ~= -1)
     end
 end
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Ausgabe der BER-Kennlinien
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 if (Anzahl ~= -1)
     figure;
-    semilogy(SNR,BER_Anz(1,:),'ro-',SNR,BER_Anz(2,:),'b*-',SNR,BER_Anz(3,:),'ms-');
+    semilogy(SNR,BER_Anz(1,:),'ro-',SNR,BER_Anz(2,:),'b*-',SNR,BER_Anz(3,:),'ms-',SNR,Pb(:),'gs-');
     grid;
     legend(strcat(num2str(Anzahl(1)), ' Bits'),...
         strcat(num2str(Anzahl(2)), ' Bits'),...
         strcat(num2str(Anzahl(3)), ' Bits'));
     title('BER fuer feste Bitanzahl');
+    ylabel('BER');
+    xlabel('SNR in dB');
 end
 
 
@@ -117,4 +122,6 @@ if (Fehlerzahl ~= -1)
         strcat(num2str(Fehlerzahl(2)), ' Fehler'),...
         strcat(num2str(Fehlerzahl(3)), ' Fehler'));
     title('BER fuer feste Fehleranzahl');
+    ylabel('BER');
+    xlabel('SNR in dB');
 end                

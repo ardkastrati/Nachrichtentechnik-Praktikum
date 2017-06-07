@@ -14,7 +14,7 @@ clear all;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % - Anzahl der Ausgabe-Bits
-Anzahl = ;      %Durch den Studenten anzupassen
+Anzahl = 2;      %Durch den Studenten anzupassen
 
 
 % Belegung der einzelnen Regsiterpfade fuer 1. und 2. Codebit
@@ -22,12 +22,13 @@ Anzahl = ;      %Durch den Studenten anzupassen
 % Konvention y1 = [x^3 x^2 x 1] an. 
 % z.B.: y1 = [1 0 0 1] für y1=x^3+1
 
-y1 = [ ];       %Durch den Studenten anzupassen
-y2 = [ ];       %Durch den Studenten anzupassen
+
+y1 = [1 1 1 1];       %Durch den Studenten anzupassen
+y2 = [1 0 1 1];       %Durch den Studenten anzupassen
 
 
 %Eingangsbitfolge
-sourceBitsInt = [ ];     %Durch den Studenten einzugeben
+sourceBitsInt = [1 1 0 0 1 0 1 0 1 1 1 0];     %Durch den Studenten einzugeben
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

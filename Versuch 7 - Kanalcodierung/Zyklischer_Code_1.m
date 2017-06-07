@@ -98,13 +98,13 @@ errorsCoded = abs(decodedBits - sourceBitsInt);
 
 
 %Darstellung: Infobits Sendereingang
-
+sourceBitsInt
 %Darstellung: Empfängerausgang
-
+decodedBits
 
 %Darstellung: Codebits Encoderausgang
-
+codedBits
 %Darstellung: Codebits Decodereingang 
-
+decoderEingang = (sign(noisedBitsCoded)+1)/2
 %Darstellung: Fehlermuster
-
+fehlermuster

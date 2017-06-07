@@ -16,27 +16,27 @@ clear all;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %Anzahl der simulierten Bits
-Anzahl = NaN;
+Anzahl = 1000000;
 
 %Signal-zu-Rausch-Verhaeltnis
 %SNR = [Startwert:Inkrement:Endwert];
-SNR = NaN : NaN : NaN;
+SNR = 4 :1 : 10;
 
 %Länge Infowort
-k = NaN;
+k = 4;
 
 %Länge Codewort
-n = NaN;
+n = 15;
 
 %Generatormatrix
 %Durch den Studenten auszuwählen
-%G = [1 0 0 0 1 0 1; 0 1 0 1 1 0 0; 0 0 1 1 0 0 1];    %erster (7,3) Code
-%G = [1 0 0 1 1 0 0; 0 1 0 0 1 1 0; 0 0 1 1 1 1 1];    %zweiter (7,3) Code
-%G = [1 0 0 1 0 1 1; 0 1 0 1 1 0 1; 0 0 1 1 1 1 0];    %dritter (7,3) Code
+% G = [1 0 0 0 1 0 1; 0 1 0 1 1 0 0; 0 0 1 1 0 0 1];    %erster (7,3) Code
+% G = [1 0 0 1 1 0 0; 0 1 0 0 1 1 0; 0 0 1 1 1 1 1];    %zweiter (7,3) Code
+% G = [1 0 0 1 0 1 1; 0 1 0 1 1 0 1; 0 0 1 1 1 1 0];    %dritter (7,3) Code
 
 %G = [1 0 1 0 1 1 1 1; 0 1 0 1 0 1 1 1];               %(8,2) Code
-%G = [1 0 0 0 0 0 0 0 1 1 1 1 1 1 1; 0 1 0 0 0 1 1 1 0 0 0 1 1 1 1; 
-%     0 0 1 0 1 0 1 1 0 1 1 0 0 1 1; 0 0 0 1 1 1 0 1 1 0 1 0 1 0 1];  %(15,4) Code
+G = [1 0 0 0 0 0 0 0 1 1 1 1 1 1 1; 0 1 0 0 0 1 1 1 0 0 0 1 1 1 1; 
+     0 0 1 0 1 0 1 1 0 1 1 0 0 1 1; 0 0 0 1 1 1 0 1 1 0 1 0 1 0 1];  %(15,4) Code
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Simulation
@@ -85,7 +85,7 @@ end
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %figure;
-semilogy(SNR,BER_Coded(1,:),'b*-');
+semilogy(SNR,BER_Coded(1,:),'rs-');
 title('BER fuer codierte Uebertragung');
 xlabel('Eb/N0')
 ylabel('BER')
