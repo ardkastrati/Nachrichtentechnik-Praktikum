@@ -41,7 +41,7 @@ BER_Anz = zeros(length(Anzahl),length(SNR));
 BER_Fehl = zeros(length(Fehlerzahl),length(SNR));
 
 %Erzeuge Random Bits
-sourceBitsInt = randi(1,1,1e6);
+sourceBitsInt = randi([0,1],1,1e6);
 
 %NRZ-Codierung
 sourceBits = sign(sourceBitsInt - 0.5);

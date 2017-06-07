@@ -42,7 +42,7 @@ G4 = [1 0 0 0 1 0 1; 0 1 0 0 1 1 1; 0 0 1 0 1 1 0; 0 0 0 1 0 1 1];
 i=0;
 
 %Erzeuge Random Bits
-sourceBitsInt = randi(1,ceil(Anzahl/k),k);
+sourceBitsInt = randi([0,1],ceil(Anzahl/k),k);
 
 %Encoder
 

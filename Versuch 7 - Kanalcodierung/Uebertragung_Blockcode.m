@@ -48,7 +48,7 @@ n = NaN;
 %assert(exist('G','var'), 'Bitte Generatormatrix auswählen')
 
 %Erzeuge Random Bits
-sourceBitsInt = randi(1,ceil(Anzahl/k),k);
+sourceBitsInt = randi([0,1],ceil(Anzahl/k),k);
 
 %Encoder
 codedBits = encode(sourceBitsInt, n, k, 'linear', G);
