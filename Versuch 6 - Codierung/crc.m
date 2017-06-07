@@ -2,7 +2,7 @@
 
 %clc
 clear all
-close all
+%close all
 AnzBits=100;   % Wie viele Bits pro CRC Block
 AnzRun= 2000;  % Wie viele Blöcke werden simuliert
 Burst=0;       % Burst = 0 : Einzelfehler werden simuliert
@@ -10,7 +10,7 @@ Burst=0;       % Burst = 0 : Einzelfehler werden simuliert
          
 % GenPoly=[1 x^1 x^2 x^3 ...] ohne höchste Potenz!
 
- GenPoly=[1];                     % (x+1)
+ %GenPoly=[1];                     % (x+1)
 % GenPoly=[1 0];                   % (1+x)(1+x)
 % GenPoly=[1 1 0 0];               % CRC-4
 % GenPoly=[1 0 1 0 1];             % CRC-5-ITU
@@ -18,7 +18,7 @@ Burst=0;       % Burst = 0 : Einzelfehler werden simuliert
 % GenPoly=[1 1 0 0 0 0];           % CRC-6 ITU
 % GenPoly=[1 0 0 1 0 0 0];         % CRC-7
 % GenPoly=[1 0 1 1 0 0 0 1];       % 1-WIRE Bus               
-%GenPoly=[1 0 0] % (x^3+1) 
+GenPoly=[1 0 0] % (x^3+1) 
 for N=1:10    % Schleife über 1..10 Fehler
 
     errAnz=0;
