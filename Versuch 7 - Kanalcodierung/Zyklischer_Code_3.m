@@ -2,7 +2,7 @@
 %   Nachrichtentechnisches Praktikum - Aufgabe 8 - Kanalcodierung 
 %                                                      
 %   6. Zyklische Blockcodes 2
-%   6.3 - Übertragung mit zyklischem Blockcode                                                      
+%   6.3 - ??bertragung mit zyklischem Blockcode                                                      
 %                                                    
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -16,10 +16,10 @@ clear all;
 % - Anzahl der simulierten Bits
 Anzahl = 12;
 
-%Länge Infowort
+%L??nge Infowort
 k= 3;
 
-%Länge Codewort
+%L??nge Codewort
 n= 7;
 
 % (7,3)-Code mit g(x) = 1 + x^2 + x^3 + X^4
@@ -98,7 +98,7 @@ errorsCoded = abs(decodedBits - sourceBitsInt);
 
 %Darstellung: Infobits Sendereingang
 sourceBitsInt
-%Darstellung: Empfängerausgang
+%Darstellung: Empf??ngerausgang
 decodedBits
 
 %Darstellung: Codebits Encoderausgang
@@ -107,3 +107,19 @@ codedBits
 decoderEingang = (sign(noisedBitsCoded)+1)/2
 %Darstellung: Fehlermuster
 fehlermuster
+
+
+err_pat_dec = 0:127;
+err_pat_bin = dec2bin(err_pat_dec)-'0';
+
+syndroms = mod((err_pat_bin(:,:) * H'),2);
+error_weight = sum(err_pat_bin, 2);
+syndroms_dec = bin2dec(num2str(syndroms));
+
+M = zeros(16, 7);
+for i=1:16
+    s_dec = i-1
+    syndrom_error_patterns = err_pat_bin(find(syndroms_dec == s_dec),:)
+    [min_weight, min_index] = min(sum(syndrom_error_patterns, 2))
+    M(i,:) = syndrom_error_patterns(min_index(1),:)
+end
