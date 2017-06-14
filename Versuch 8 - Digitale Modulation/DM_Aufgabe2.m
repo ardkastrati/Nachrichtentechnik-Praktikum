@@ -12,10 +12,10 @@ clear all;
 
 %% Setup
 % Define parameters.
-M = 4;          % Size of signal constellation
+M = 2;          % Size of signal constellation
 k = log2(M);    % Number of bits per symbol
 n = 3e4;        % Number of bits to process
-nsamp = 4;      % Oversampling rate
+nsamp = 2;      % Oversampling rate
 
 %% Signal Source
 % Create a binary data stream as a column vector.
@@ -38,7 +38,8 @@ set(h, 'name', 'Before channel');
 % Send signal over an AWGN channel.
 EbNo = 10; % in dB
 snr = EbNo + 10*log10(k) - 10*log10(nsamp);
-ynoisy = awgn(ytx,snr,'measured');
+ynoisy = ytx 
+%awgn(ytx,snr,'measured');
 
 %% plot eye diagram
 h = eyediagram(ynoisy(1:2000),nsamp*2,2);
@@ -61,7 +62,7 @@ axis([-5 5 -5 5]); % Set axis ranges.
 
 %% Demodulation
 % Demodulate signal using 16-QAM.
-z = symbols_to_bits(yrx, M);
+z = symbols_to_bits(yrx, M)';
 
 %% BER Computation
 % Compare x and z to obtain the number of errors and

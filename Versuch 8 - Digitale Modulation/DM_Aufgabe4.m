@@ -8,7 +8,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 clear all;
-close all;
+% close all;
 
 warning('off','comm:obsolete:rcosine');
 warning('off','comm:obsolete:rcosflt');
@@ -89,4 +89,5 @@ for i = 1:length(phivec)
 end
 
 plot(phivec, BER)
+hold on
 

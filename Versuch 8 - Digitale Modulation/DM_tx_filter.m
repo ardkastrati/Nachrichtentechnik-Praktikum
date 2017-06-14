@@ -14,8 +14,8 @@ delay = filtorder/(nsamp*2);    % Group delay (# of input samples)
 rrcfilter = rcosine(1,nsamp,'fir/sqrt',rolloff,delay);
 
 % Plot impulse response.
-%figure(2); impz(rrcfilter,1);
-%figure(3); freqz(rrcfilter,4);
+% figure(2); impz(rrcfilter,1);
+% figure(3); freqz(rrcfilter,4);
 
 % upsample and apply raised cosine filter.
 ytx = rcosflt(y,1,nsamp,'filter',rrcfilter);

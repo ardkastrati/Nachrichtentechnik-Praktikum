@@ -11,9 +11,13 @@ end
 if (~all(bits==0 | bits==1))
     error('bits must contain only zeros and ones')
 end
-    
+
+if isrow(bits) % transpose if neccessary
+    bits = bits';
+end
+
 hBitToInt = comm.BitToInteger(log2(M));
-tx_sym = step(hBitToInt, bits');
+tx_sym = step(hBitToInt, bits);
 
 if(M==16)
     symbols = qammod(tx_sym, M, 'gray', 'UnitAveragePower', true)';
