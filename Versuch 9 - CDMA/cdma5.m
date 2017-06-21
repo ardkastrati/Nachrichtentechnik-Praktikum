@@ -46,8 +46,8 @@ SF           = 16;
 
 %%% EDIT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Hold Faktor fuer Stoerer, HoldNoise kleiner gleich SF !
-HoldNoise = 8; % schmalbandiger Stoerer
-% HoldNoise = 1; % breitbandiger Stoerer
+% HoldNoise = 8; % schmalbandiger Stoerer
+HoldNoise = 1; % breitbandiger Stoerer
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Konstante fuer Stoerer
