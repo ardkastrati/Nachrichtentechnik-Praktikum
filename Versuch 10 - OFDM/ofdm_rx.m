@@ -23,7 +23,7 @@ signal = reshape(signal,(fft_len+cp_len),n_osymb);
 symbols = fft(signal,fft_len,1);
 
 % do time shift (due to cp) -> shift theorem
-symbols = symbols.*exp(2j*pi*(0:fft_len-1)'*cp_len/fft_len);
+symbols = symbols.*repmat(exp(2j*pi*(0:fft_len-1)'*cp_len/fft_len),1,n_osymb);
 
 % equalization
 symbols = symbols .* repmat(eq_vector,1,n_osymb);
