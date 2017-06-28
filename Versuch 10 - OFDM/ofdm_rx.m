@@ -20,10 +20,16 @@ end
 signal = reshape(signal,(fft_len+cp_len),n_osymb);
 
 % do fft
-symbols = fftshift(fft(signal,fft_len),1);
+symbols = fft(signal,fft_len,1);
 
-% eq-vector
+% do time shift (due to cp) -> shift theorem
+symbols = symbols.*exp(2j*pi*(0:fft_len-1)'*cp_len/fft_len);
+
+% equalization
 symbols = symbols .* repmat(eq_vector,1,n_osymb);
+
+% do fftshift
+symbols = fftshift(symbols,1);
 
 % extract carriers
 n_zero = (fft_len-n_carriers-1)/2;

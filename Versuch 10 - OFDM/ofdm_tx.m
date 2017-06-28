@@ -29,7 +29,9 @@ signal = ifft(fftshift(symbols,1),fft_len,1);
 if cp_len>fft_len
     warning('invalid cp_len');
 elseif cp_len>0
-    signal = [signal; signal(1:cp_len,:)];
+%     signal = [signal; signal(1:cp_len,:)];
+    
+    signal = [signal(end-cp_len+1:end,:); signal];
 end
 
 % parallel to serial
