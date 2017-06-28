@@ -10,7 +10,7 @@ clear variables;
 
 %% OFDM-Einstellungen
 fft_len    = 128;
-n_carriers = 127;
+n_carriers = 100;
 cp_len     = 8;
 n_symbols  = 100; % OFDM-Symbole
 %M = 2; % BPSK
@@ -73,7 +73,7 @@ EbN0_range = snr_range - 10 * log10(n_carriers/fft_len * log2(M));
 
 %% Plots
 if show_ber
-%     figure;
+    figure;
     semilogy(EbN0_range, ber);
     if M == 2 || M == 4 || M == 8
         ber_theoretical = berawgn(EbN0_range, 'psk', M, 'nondiff');

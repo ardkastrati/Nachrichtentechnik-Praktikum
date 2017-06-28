@@ -5,7 +5,7 @@ if n_carriers >= fft_len
 end
 
 if ~iscolumn(eq_vector) || length(eq_vector)~=fft_len
-    error('Invalid eq_vector)')
+    error('Invalid eq_vector')
 end
 
 ratio = length(signal)/(fft_len+cp_len);
@@ -20,10 +20,10 @@ end
 signal = reshape(signal,(fft_len+cp_len),n_osymb);
 
 % do fft
-symbols = fft(signal,fft_len,1);
+symbols = fft(signal(cp_len+1:end,:),fft_len,1);
 
-% do time shift (due to cp) -> shift theorem
-symbols = symbols.*repmat(exp(2j*pi*(0:fft_len-1)'*cp_len/fft_len),1,n_osymb);
+% % do time shift (due to cp) -> shift theorem
+% symbols = symbols.*repmat(exp(2j*pi*(0:fft_len-1)'*cp_len/fft_len),1,n_osymb);
 
 % equalization
 symbols = symbols .* repmat(eq_vector,1,n_osymb);

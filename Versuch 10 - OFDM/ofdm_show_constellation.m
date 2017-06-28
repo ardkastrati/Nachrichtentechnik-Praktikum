@@ -14,14 +14,14 @@ n_carriers = 48;
 cp_len     = 8;
 n_symbols  = 100; % OFDM-Symbole
 % Modulationsverfahren (eins davon auswaehlen):
-%M = 2; % BPSK
+M = 2; % BPSK
 %M = 4; % QPSK
 %M = 8; % 8-PSK
-M = 16; % 16-QAM
-%M = 64; % 64-QAM
+% M = 16; % 16-QAM
+% M = 64; % 64-QAM
 
 %% Kanal/Rauschen
-noise_power = -30; % dBW
+noise_power = -50; % dBW
 
 %% Sendesignal erzeugen
 bits = randi([0 1], 1, n_symbols * n_carriers * log2(M));

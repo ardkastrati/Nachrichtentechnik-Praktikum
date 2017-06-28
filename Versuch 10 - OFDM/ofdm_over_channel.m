@@ -6,7 +6,7 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-close all;
+%close all;
 
 %% OFDM-Einstellungen
 fft_len    = 64;
@@ -17,7 +17,7 @@ n_symbols  = 100; % OFDM-Symbole
 %M = 2; % BPSK
 M = 4; % QPSK
 %M = 8; % 8-PSK
-%M = 16; % 16-QAM
+% M = 16; % 16-QAM
 %M = 64; % 64-QAM
 
 % Symbole differenziell vorcodieren
@@ -27,12 +27,12 @@ diff_encoding = true;
 %% Mehrwegekanal
 multi_path = [0.9+0.2j   0   0   -0.4+0.4j   0   0.3-0.15j].';
 % Entzerrersymbol... was schreibt man hier sinnvollerweise rein?
-eq_vector  = ones(fft_len, 1);
+eq_vector  = 1./fft(multi_path, fft_len);%
 
 %% Simulationseinstellungen
 snr_range = 15:1:35;
 show_spectrum = true;
-show_ber = false;
+show_ber = true;
 show_constellation = true;
 
 %% Simulation

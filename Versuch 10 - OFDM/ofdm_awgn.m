@@ -11,7 +11,7 @@ clear variables;
 %% OFDM-Einstellungen
 fft_len    = 64;
 n_carriers = 48;
-cp_len     = 8;
+cp_len     = 10;
 n_symbols  = 1000; % OFDM-Symbole
 %M = 2; % BPSK
 M = 4; % QPSK
@@ -21,7 +21,7 @@ M = 4; % QPSK
 %% Simulationseinstellungen
 % Ueber diesen Bereich wird iteriert
 snr_range = -10:10;
-show_theoretical_ber = false;
+show_theoretical_ber = true;
 
 bits_per_signal = n_carriers * n_symbols * log2(M);
 eq_vector = ones(fft_len, 1);
@@ -54,7 +54,7 @@ for sim_idx = 1:length(snr_range)
 end
 
 %% Die folgende Zeile koennte falsch sein:
-EbN0_range = snr_range;
+EbN0_range = snr_range-10*log10(log2(M)*n_carriers/(fft_len+cp_len));
 
 %% Plots
 figure;

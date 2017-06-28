@@ -11,8 +11,8 @@ clear variables;
 %% OFDM-Einstellungen
 cp_len     = 8;
 n_symbols  = 10000; % OFDM-Symbole
-M = 2; % BPSK
-% M = 4; % QPSK
+%M = 2; % BPSK
+M = 4; % QPSK
 %M = 8; % 8-PSK
 
 %% Simulationseinstellungen
@@ -27,7 +27,7 @@ for sim_idx = 1:length(fft_len_range)
     bits_per_signal = n_carriers * n_symbols * log2(M);
     % Entweder alle gleich, oder Zufall:
     bits_tx = randi([0 1], bits_per_signal, 1);
-%     bits_tx = zeros(bits_per_signal, 1);
+    %bits_tx = zeros(bits_per_signal, 1);
     sym_tx = bits_to_symbols(bits_tx, M);
 
     % Sender
@@ -35,7 +35,7 @@ for sim_idx = 1:length(fft_len_range)
     signal_tx = ofdm_normalize_power(signal_tx, 1, 0);
 
     % PAPR berechnen
-    papr(sim_idx) = max(abs(signal_tx))^2/mean(abs(signal_tx))^2; % Muss ja stimmen
+    papr(sim_idx) = max(abs(signal_tx)^2)/mean(abs(signal_tx)); % Muss ja stimmen
 end
 
 %% Plots
