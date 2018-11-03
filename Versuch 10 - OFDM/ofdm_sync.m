@@ -15,8 +15,8 @@ n_carriers = 48;
 cp_len     = 16;
 n_symbols  = 100; % OFDM-Symbole
 % Modulationsverfahren (eins davon auswaehlen):
-M = 2; % BPSK
-%M = 4; % QPSK
+%M = 2; % BPSK
+M = 4; % QPSK
 %M = 8; % 8-PSK
 %M = 16; % 16-QAM
 %M = 64; % 64-QAM
@@ -27,13 +27,13 @@ snr = 30; % dB
 delta_f = 1/fft_len; % Untertraegerabstand, nomiert auf Samplingrate: FALSCH!
 % 4 interessante Optionen:
 % freq_offset = delta_f * 0;
-% freq_offset = delta_f * 0.01;
-freq_offset = delta_f * 1;
+ freq_offset = delta_f * 0.001;
+%freq_offset = delta_f * 1;
 % freq_offset = delta_f * 0.99;
 % Zeitoffset
 % Muss in dieser Simulation eine ganze Zahl bleiben!
 % Offset > 0: Das Signal wird zu spaet erkannt.
-time_offset =0;
+time_offset = 0;
 % Phasenoffset: In [0, 2*pi]
 phase_offset = 0;
 

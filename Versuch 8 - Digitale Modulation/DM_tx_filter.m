@@ -19,6 +19,7 @@ rrcfilter = rcosine(1,nsamp,'fir/sqrt',rolloff,delay);
 
 % upsample and apply raised cosine filter.
 ytx = rcosflt(y,1,nsamp,'filter',rrcfilter);
+%plot3((1:1:50)', real(ytx(1:50)), imag(ytx(1:50)));
 %scatterplot(y(1:5e3),1,0,'rx'); % optional
 
 end

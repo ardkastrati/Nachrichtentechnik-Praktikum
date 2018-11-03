@@ -38,9 +38,9 @@ c1 = conv(x1,y1);
 
 % Minimale Verlaengerung der Folgen fuer Faltungstheorem ( L1+L2-1 )
 x2 = x1;
-x2(8) = 0;
+x2(12) = 0;
 y2 = y1;
-y2(8) = 0;
+y2(12) = 0;
 
 % Diskrete Fourier Transformation
 X2 = fft(x2);
@@ -72,14 +72,14 @@ xlabel('k'); axis([1 9 0 15]); grid on;
 % mit Faltungstheorem
 figure('Name','Faltung mit Faltungstheorem ueber den Frequenzbereich')
 subplot(4,2,1); stem(x2); title('verlaengerte Folge x2');
-    xlabel('k'); axis([1 9 0 15]); grid on;
+    xlabel('k'); axis([1 12 0 15]); grid on;
 subplot(4,2,2); stem(y2); title('verlaengerte Folge y2');
-    xlabel('k'); axis([1 9 0 15]); grid on;
+    xlabel('k'); axis([1 12 0 15]); grid on;
 subplot(4,2,3); stem(abs(X2)); title('| DFT ( x2 ) |');
-    xlabel('n'); axis([1 9 0 15]); grid on;
+    xlabel('n'); axis([1 12 0 15]); grid on;
 subplot(4,2,4); stem(abs(Y2)); title('| DFT ( y2 ) |'); 
-    xlabel('n'); axis([1 9 0 15]); grid on;
+    xlabel('n'); axis([1 12 0 15]); grid on;
 subplot(4,2,5:6); stem(abs(C2)); title('| DFT ( x2 ) * DFT ( y2 ) |'); 
-    xlabel('n'); axis([1 9 0 inf]); grid on;
+    xlabel('n'); axis([1 12 0 inf]); grid on;
 subplot(4,2,7:8); stem(c2); title('IFFT \{ DFT ( x2 ) * DFT ( y2 ) \}'); 
-    xlabel('n'); axis([1 9 0 inf]); grid on;
+    xlabel('n'); axis([1 12 0 inf]); grid on;

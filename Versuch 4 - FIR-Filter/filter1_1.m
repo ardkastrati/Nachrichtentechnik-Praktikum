@@ -4,7 +4,7 @@
 %   Nachrichtentechnisches Praktikum - Aufgabe 4 - FIR-Multiratenfilter
 %
 %
-% 1.1: FIR-Filterentwurf mit Fourierapproximation - Einführung
+% 1.1: FIR-Filterentwurf mit Fourierapproximation - Einf??hrung
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -31,7 +31,7 @@ filt_amp3 = 1;  % Filterverstaerkung
 %% Berechnungen 
 
 % Berechnung der Filterkoeffizienten durch Fourierapproximation
-b1 = Wn1*sinc(Wn1*(-(n1-1)/2:(n1-1)/2)); % sinc für Rechtecktiefpass
+b1 = Wn1*sinc(Wn1*(-(n1-1)/2:(n1-1)/2)); % sinc f??r Rechtecktiefpass
 b2 = Wn2*sinc(Wn2*(-(n2-1)/2:(n2-1)/2));
 b3 = Wn3*sinc(Wn3*(-(n3-1)/2:(n3-1)/2));
 

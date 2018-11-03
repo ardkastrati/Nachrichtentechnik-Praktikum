@@ -42,5 +42,5 @@ end
 %% Spectrum
 %figure;
 
-% [pxx, f] = periodogram(ytx);
-% plot(f,10*log10(pxx),'--')
+ %[pxx, f] = periodogram(ytx);
+ %plot(f,10*log10(pxx),'--')

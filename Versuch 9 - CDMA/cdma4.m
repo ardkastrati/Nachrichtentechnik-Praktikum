@@ -41,7 +41,7 @@ GenPoly2 = [5 7 10 18];
 % Anfangsbelegung der Schieberegister
 InitialState1 =  [1 3 7 10 15 18];
 %%% EDIT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% InitialState2 = InitialState1;
+%InitialState2 = InitialState1;
 InitialState2 =  [7 18];
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

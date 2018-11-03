@@ -27,7 +27,7 @@ diff_encoding = true;
 %% Mehrwegekanal
 multi_path = [0.9+0.2j   0   0   -0.4+0.4j   0   0.3-0.15j].';
 % Entzerrersymbol... was schreibt man hier sinnvollerweise rein?
-eq_vector  = 1./fft(multi_path, fft_len);%
+eq_vector  = ones(fft_len,1);%./fft(multi_path, fft_len);%
 
 %% Simulationseinstellungen
 snr_range = 15:1:35;

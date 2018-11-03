@@ -11,7 +11,7 @@
 %% Setup
 % Define parameters.
 M = 8;          % Size of signal constellation
-diff_encoding = true;   % Turn differential encoding on/off
+diff_encoding = true#;   % Turn differential encoding on/off
 k = log2(M);    % Number of bits per symbol
 n = 24e5;       % Number of bits to process
 % n = 8;
@@ -81,7 +81,7 @@ for i = 1:length(EbN0range)
 end
 
 %% Plot
-semilogy(EbNomin:EbNostep:EbNomax,BER, 'g-');
+semilogy(EbNomin:EbNostep:EbNomax,BER, 'b-');
 hold on
 
 if theoretical

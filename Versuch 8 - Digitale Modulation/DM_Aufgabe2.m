@@ -3,7 +3,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %   Nachrichtentechnisches Praktikum - Aufgabe 9 - Digitale Modulation
 %
-%   Aufgabe 2: Störung durch additives weißes Rauschen
+%   Aufgabe 2: St??rung durch additives wei??es Rauschen
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -12,7 +12,7 @@ clear all;
 
 %% Setup
 % Define parameters.
-M = 2;          % Size of signal constellation
+M = 8;          % Size of signal constellation
 k = log2(M);    % Number of bits per symbol
 n = 3e4;        % Number of bits to process
 nsamp = 2;      % Oversampling rate
@@ -38,9 +38,9 @@ set(h, 'name', 'Before channel');
 % Send signal over an AWGN channel.
 EbNo = 10; % in dB
 snr = EbNo + 10*log10(k) - 10*log10(nsamp);
-ynoisy = ytx 
-%awgn(ytx,snr,'measured');
 
+ynoisy = awgn(ytx,snr,'measured');
+ %= ytx;
 %% plot eye diagram
 h = eyediagram(ynoisy(1:2000),nsamp*2,2);
 set(h, 'name', 'After channel');

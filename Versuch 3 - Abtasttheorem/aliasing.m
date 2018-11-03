@@ -17,13 +17,13 @@ clc
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %Vektor der Abtastraten
-f_a=[0.5 1 33];%[4 2 1 0.5];%Hz - bitte vervollstaendigen Sie diesen Vektor!;
+f_a=[0.5 1 2];%[4 2 1 0.5];%Hz - bitte vervollstaendigen Sie diesen Vektor!;
 
 %simulierte Zeitdauer
 T=25;%seconds (20)
 
 % Signalmodus
-signal_mode=1;%(1)
+signal_mode=4;%(1)
 
 % Frequenz der Si-, Sinus- und Cosinus-Funktion
 f0=1/3;%Hz

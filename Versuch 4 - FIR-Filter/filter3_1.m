@@ -14,12 +14,12 @@ clc;
 %% Parameter
 
 % Filter
-Wn =  0.3*2*pi  %;2*pi/8;     % Breite des Durchlassbereichs (in Radiant);
-Omega_T =3.6; %2*pi/4;; %pi; %   % Parameter zur Filtertransformation (Mittenfrequenz in Radiant)
-n = 31;             % Filterlänge
-filt_amp = 1;       % Filterverstärkung
+Wn = 2*pi/4; %0.3*2*pi ;      % Breite des Durchlassbereichs (in Radiant);
+Omega_T =2*pi/4; %;3.6; %pi; %   % Parameter zur Filtertransformation (Mittenfrequenz in Radiant)
+n = 31;             % Filterl??nge
+filt_amp = 1;       % Filterverst??rkung
 
-assert(~isnan(Wn) && ~isnan(Omega_T), 'Bitte Parameter für Wn und Omega_T eintragen')
+assert(~isnan(Wn) && ~isnan(Omega_T), 'Bitte Parameter f??r Wn und Omega_T eintragen')
 
 %% Berechnungen
 
@@ -32,7 +32,7 @@ b_cos = cos(Omega_T*(0:1:n-1));
 % Normierungsfaktoren im Frequenzbereich bestimmen
 [H W]  = freqz(b,1,4096);
 
-% Filterkoeffizienten so skalieren, dass die gewünschte Filterverstärkung
+% Filterkoeffizienten so skalieren, dass die gew??nschte Filterverst??rkung
 % erreicht wird
 b = filt_amp * b/H(1);
 

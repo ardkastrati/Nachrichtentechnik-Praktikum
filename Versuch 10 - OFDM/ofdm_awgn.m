@@ -11,7 +11,7 @@ clear variables;
 %% OFDM-Einstellungen
 fft_len    = 64;
 n_carriers = 48;
-cp_len     = 10;
+cp_len     = 2;
 n_symbols  = 1000; % OFDM-Symbole
 %M = 2; % BPSK
 M = 4; % QPSK
